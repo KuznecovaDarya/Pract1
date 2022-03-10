@@ -1,0 +1,42 @@
+﻿<Page x:Class="Shop2.NewOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shop2"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="600"
+      Title="Order"
+      Background="Beige">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Дата заказа" Grid.Row="0" FontSize="20"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Имя заказчика" Grid.Row="1" FontSize="20"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Адрес" Grid.Row="2" FontSize="20"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Товар" Grid.Row="3" FontSize="20"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Количество товара" Grid.Row="4" FontSize="20"></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Имя доставщика" Grid.Row="5" FontSize="20"></TextBlock>
+
+        <TextBox Text="{Binding date_order}" MaxLength="300" Grid.Row="0" Grid.Column="1"></TextBox>
+        <ComboBox SelectedItem="{Binding Customer.Name}" x:Name="CustomerName" DisplayMemberPath="CustomerName" Grid.Row="1" Grid.Column="1"></ComboBox>
+        <TextBox Text="{Binding Address}" Grid.Row="2" Grid.Column="1"></TextBox>
+        <ComboBox SelectedItem="{Binding Product.Name}" x:Name="ProductName" DisplayMemberPath="ProductName" Grid.Row="3" Grid.Column="2"></ComboBox>
+        <TextBox Text="{Binding count_product}" Grid.Row="4" Grid.Column="2"></TextBox>
+        <ComboBox SelectedItem="{Binding Deliveryman.Name}" x:Name="DeliverymanName" DisplayMemberPath="DeliverymanName" Grid.Row="5" Grid.Column="2"></ComboBox>
+
+        <Button Background="White" Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="7" Name="BtnSave" Click="BtnSave_Click"></Button>
+    </Grid>
+</Page>
